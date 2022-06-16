@@ -104,3 +104,48 @@
     opacity: 1;
   }
 }
+
+.main {
+  margin-top: 10px;
+}
+
+.tag__wrapper {
+  width: max-content;
+  transition: all 0.1s;
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.tags {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  &__item {
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  &__input {
+    display: none;
+    &:checked ~ .tags__item {
+      color: white;
+      background: #383838;
+    }
+  }
+}
+
+.loadng {
+  margin: 0 auto;
+  width: max-content;
+  height: max-content;
+  &__image {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -6,6 +6,7 @@ function Header() {
       <a className="header__logo" href="#">
         <h1>CloneUP</h1>
       </a>
+
       <div className="search">
         <input
           className="search__input"
@@ -22,6 +23,7 @@ function Header() {
           <path d="M88.5 89c-2 2-5.2 2-7.1 0L65.9 73.6C60.1 78 52.8 80.5 45 80.5c-19.3 0-35-15.7-35-35s15.7-35 35-35 35 15.7 35 35c0 7.8-2.6 15.1-6.9 20.9l15.4 15.4c2 2 2 5.2 0 7.2zM45 20.5c-13.8 0-25 11.2-25 25s11.2 25 25 25 25-11.2 25-25-11.2-25-25-25z" />
         </svg>
       </div>
+
       <div className="cart">
         <div className="cart__basket">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29">

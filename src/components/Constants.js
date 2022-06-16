@@ -24,6 +24,7 @@ export default {
     "silicone free",
     "water free",
   ],
+
   categories: [
     "Bb cc",
     "Concealer",
