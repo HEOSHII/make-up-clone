@@ -6,10 +6,10 @@ export default {
     await axios
       .get(this.BASE_URL, {
         params: {
-          product_tags: tags.join("&"),
+          product_tags: tags.join(", "),
         },
       })
-      .then((response) => response)
+      .then((response) => console.log(response))
       .catch((error) => console.warn(error));
   },
 };

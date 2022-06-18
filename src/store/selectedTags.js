@@ -2,17 +2,17 @@ const defaultState = {
   tags: [],
 };
 
-export const selectedTags = (state = defaultState, action) => {
-  switch (action.type) {
+export const selectedTags = (state = defaultState, { type, payload }) => {
+  switch (type) {
     case ADD_TAG:
       return {
         ...state,
-        tags: [...state.tags, action.payload],
+        tags: [...state.tags, payload],
       };
     case REMOVE_TAG:
       return {
         ...state,
-        tags: [...state.tags.filter((tag) => tag !== action.payload)],
+        tags: [...state.tags.filter((tag) => tag !== payload)],
       };
     default:
       return state;
