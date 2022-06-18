@@ -1,22 +1,27 @@
-import React, { useState } from "react";
 import Header from "./components/Header";
-import apiRequests from "./components/apiRequests";
-import constants from "./components/constants";
-import Tag from "./components/Tag";
 import Loading from "./components/Loading";
+import { useSelector } from "react-redux";
+import TagsList from "./components/TagsList";
 
 function App() {
+  const selectedTags = useSelector((state) => state.selectedTags.tags);
+  console.log(selectedTags);
+
   return (
     <div className="App">
       <Header />
       <main className="main container">
-        <div className="tags">
-          {constants.tags.map((tag, index) => {
-            return <Tag tag={tag} key={index} />;
-          })}
+        <TagsList selectedTags={selectedTags} />
+        <div className="products">
+          <div className="products__item">
+            <img src=""></img>
+          </div>
         </div>
-
-        <Loading class="loadng" />
+        {!selectedTags.length ? (
+          <Loading class="loadng" />
+        ) : (
+          <h1>{"There will be products"}</h1>
+        )}
       </main>
     </div>
   );

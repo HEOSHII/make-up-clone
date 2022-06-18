@@ -77,7 +77,6 @@ export default {
   ],
 
   brands: [
-    "Select brand",
     "almay",
     "alva",
     "anna sui",
