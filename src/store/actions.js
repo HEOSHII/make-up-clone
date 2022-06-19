@@ -1,14 +1,7 @@
 import constants from "../components/constants";
-import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG, CLEAR_TAG } from "./types";
+import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG } from "./types";
 import axios from "axios";
 axios.defaults.baseURL = "http://makeup-api.herokuapp.com/api/v1";
-
-export const clearTags = () => {
-  return {
-    type: CLEAR_TAG,
-    payload: "",
-  };
-};
 
 export const addTag = (payload) => {
   return {

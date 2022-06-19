@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Poppins:ital,wght@0,100;0,400;0,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Poppins:ital,wght@0,100;0,400;0,900;1,900&display=swap");
 .header {
   width: 100%;
   display: -webkit-box;
@@ -312,7 +312,7 @@
 
 .products__price {
   margin-top: 40px;
-  font-family: "Crimson Text", serif;
+  font-family: "Crimson Pro", serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,7 +322,7 @@
   gap: 10px;
   letter-spacing: 0.2rem;
   color: #6b8068;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .products__price-dollar {
@@ -364,155 +364,11 @@
   padding: 0 20px;
 }
 
-.header {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
-}
-
-.header__logo {
-  color: #383838;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.header__logo:hover {
-  color: black;
-}
-
-.search {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-.search__input {
-  padding: 5px 10px;
-  width: 200px;
-  -webkit-transition: width 0.2s, -webkit-box-shadow 0.2s;
-  transition: width 0.2s, -webkit-box-shadow 0.2s;
-  -o-transition: width 0.2s, box-shadow 0.2s;
-  transition: width 0.2s, box-shadow 0.2s;
-  transition: width 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
-  -webkit-transition-delay: 1s, 0s;
-       -o-transition-delay: 1s, 0s;
-          transition-delay: 1s, 0s;
-  border: 1px solid #383838;
-  border-radius: 5px;
-  background: whitesmoke;
-}
-
-.search__input:focus {
-  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6);
-  width: 300px;
-  -webkit-transition-delay: 0s;
-       -o-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
-.search svg {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 20px;
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  fill: #383838;
-  opacity: 0.5;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.search svg:hover {
-  opacity: 1;
-}
-
-.cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 7px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  opacity: 0.7;
-  color: #383838;
-}
-
-.cart__basket {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.cart__basket-count {
-  width: 16px;
-  height: 16px;
-  font-size: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #383838;
-  -webkit-box-shadow: 0 0 0 2px white;
-          box-shadow: 0 0 0 2px white;
-  border-radius: 50%;
-  color: white;
-  position: absolute;
-  top: -25%;
-  right: -25%;
-}
-
-.cart svg {
-  height: 20px;
-}
-
-.cart svg path {
-  fill: #383838;
-}
-
-.cart:hover {
-  opacity: 1;
-}
-
 .main {
   margin-top: 10px;
 }
 
-.loadng {
+.loading {
   margin: 0 auto;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -522,12 +378,17 @@
   height: max-content;
 }
 
-.loadng__image {
+.loading__image {
   width: 100px;
   height: 100px;
 }
 
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
   width: 100%;
   background: #f7f7f7;
+  padding: 20px 0;
 }
