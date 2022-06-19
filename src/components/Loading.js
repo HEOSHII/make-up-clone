@@ -2,9 +2,9 @@ import React from "react";
 
 function Loading(props) {
   return (
-    <div className={props.class}>
+    <div className={props.className}>
       <img
-        className={props.class + "__image"}
+        className={props.className + "__image"}
         src="./assets/loading.svg"
         alt="loading"
       ></img>

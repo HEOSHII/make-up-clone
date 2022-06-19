@@ -31,7 +31,6 @@ export const setProducts = (payload) => {
 };
 
 export const asyncGetProdutcsByTag = (selectedTags) => {
-  constants.isLoad = true;
   return (dispatch) => {
     axios
       .get(constants.BASE_URL, {
@@ -41,6 +40,7 @@ export const asyncGetProdutcsByTag = (selectedTags) => {
       })
       .then((response) => {
         dispatch(setProducts(response.data));
+
         constants.isLoad = false;
       })
       .catch((error) => console.warn(error));
