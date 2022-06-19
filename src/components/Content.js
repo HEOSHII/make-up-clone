@@ -30,8 +30,8 @@ function Content({ products, tags }) {
                     {product.price}
                     <span className="products__price-dollar">$</span>
                   </strong>
+                  <button className="products__buy-button">Add to cart</button>
                 </div>
-                <button className="products__buy-button">Add to cart</button>
               </div>
             );
           })

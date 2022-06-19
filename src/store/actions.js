@@ -1,6 +1,7 @@
 import constants from "../components/constants";
 import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG, CLEAR_TAG } from "./types";
 import axios from "axios";
+axios.defaults.baseURL = "http://makeup-api.herokuapp.com/api/v1";
 
 export const clearTags = () => {
   return {
@@ -33,7 +34,7 @@ export const setProducts = (payload) => {
 export const asyncGetProdutcsByTag = (selectedTags) => {
   return (dispatch) => {
     axios
-      .get(constants.BASE_URL, {
+      .get("/products.json", {
         params: {
           product_tags: selectedTags.join(", "),
         },

@@ -1,0 +1,39 @@
+.tags {
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    color: $primary-grey;
+  }
+  .tag {
+    width: max-content;
+    transition: all 0.1s;
+    &:hover {
+      transform: scale(1.03);
+    }
+    &__label {
+      padding: 5px 10px;
+      margin-bottom: 15px;
+      background: $secondary-grey;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+    &__input {
+      display: none;
+      &:checked ~ .tag__label {
+        color: white;
+        background: $primary-grey;
+      }
+    }
+  }
+}
