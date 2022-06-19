@@ -2,7 +2,7 @@ const defaultState = {
   tags: [],
 };
 
-export const selectedTags = (state = defaultState, { type, payload }) => {
+export const selectedTagsReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case ADD_TAG:
       return {

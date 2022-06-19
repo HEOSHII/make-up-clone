@@ -1,4 +1,7 @@
 export default {
+  isLoad: false,
+  products: [],
+  BASE_URL: `http://makeup-api.herokuapp.com/api/v1/products.json`,
   tags: [
     "Canadian",
     "CertClean",

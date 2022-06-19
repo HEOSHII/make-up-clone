@@ -1,15 +1,16 @@
 import axios from "axios";
+import constants from "./constants";
+import { setProducts } from "../store/actions";
 
 export default {
-  BASE_URL: `http://makeup-api.herokuapp.com/api/v1/products.json`,
   async getByTag(tags) {
     await axios
-      .get(this.BASE_URL, {
+      .get(constants.BASE_URL, {
         params: {
           product_tags: tags.join(", "),
         },
       })
-      .then((response) => console.log(response))
+      .then((response) => setProducts(response.data))
       .catch((error) => console.warn(error));
   },
 };

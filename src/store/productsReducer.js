@@ -1,18 +1,17 @@
-import apiRequests from "../components/apiRequests";
+import { PRODUCTS_BY_TAG } from "./types";
 
 const defaultState = {
   products: [],
 };
-export const productsReducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case ADD_PRODUCTS_BY_TAG:
+
+export const productsReducer = (state = defaultState, { type, payload }) => {
+  switch (type) {
+    case PRODUCTS_BY_TAG:
       return {
         ...state,
-        products: apiRequests.getByTag(action.payload),
+        products: payload,
       };
     default:
       return state;
   }
 };
-
-const ADD_PRODUCTS_BY_TAG = "ADD_PRODUCTS_BY_TAG";
