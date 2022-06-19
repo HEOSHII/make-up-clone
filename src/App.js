@@ -20,7 +20,6 @@ function App() {
     <div className="App">
       <Header />
       <main className="main">
-        <h3>TAGS</h3>
         <TagsList selectedTags={selectedTags} />
         {selectedTags.length ? (
           !products.length ? (
@@ -31,17 +30,25 @@ function App() {
                 {products.map((product) => {
                   return (
                     <div className="products__item" key={product.id}>
-                      <h4>{product.name}</h4>
+                      <div className="products__code">code: {product.id}</div>
                       <div className="products__image-wrapper">
                         <img
                           className="products__image"
                           src={product.image_link}
                           alt={product.name}
-                        ></img>
+                        />
+                      </div>
+                      <div className="products__info">
+                        <h4 className="products__name">{product.name}</h4>
+                        <p className="products__tags">
+                          ({product.tag_list.join(", ")})
+                        </p>
+                        <strong className="products__price">
+                          {product.price}
+                          <span className="products__price-dollar">$</span>
+                        </strong>
                       </div>
 
-                      <p>{product.tag_list.join(", ")}</p>
-                      <strong>{product.price}$</strong>
                       <button className="products__buy-button">
                         Add to cart
                       </button>

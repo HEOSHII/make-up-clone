@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,900;1,900&display=swap");
 
 * {
   margin: 0;
@@ -120,10 +120,20 @@
 
 .tags {
   display: flex;
-  width: 100%;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  &__wrapper {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    color: #383838;
+  }
   &__item {
     padding: 5px 10px;
     margin-bottom: 15px;
@@ -177,11 +187,26 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s;
+    position: relative;
     &:hover {
       box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2), inset 0 0 0 1px #d5d5d5;
       transform: scale(1.01);
+      & .products__code {
+        opacity: 1;
+      }
     }
   }
+
+  &__code {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    opacity: 0;
+    color: #969696;
+    transition: all 0.2s;
+  }
+
   &__image-wrapper {
     margin-top: 20px;
     width: 100%;
@@ -193,6 +218,33 @@
     height: 100%;
     object-fit: cover;
     transition: all 0.2s;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__tags {
+    font-weight: 100;
+  }
+
+  &__price {
+    // transform: translateX(10px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.2rem;
+    color: #6b8068;
+    font-size: 20px;
+    font-style: italic;
   }
   &__buy-button {
     font-weight: bold;

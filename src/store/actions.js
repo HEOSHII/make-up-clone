@@ -1,6 +1,13 @@
 import constants from "../components/constants";
-import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG } from "./types";
+import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG, CLEAR_TAG } from "./types";
 import axios from "axios";
+
+export const clearTags = () => {
+  return {
+    type: CLEAR_TAG,
+    payload: "",
+  };
+};
 
 export const addTag = (payload) => {
   return {

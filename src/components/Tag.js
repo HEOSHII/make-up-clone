@@ -26,7 +26,7 @@ function Tag({ tag }) {
         onClick={(event) => checkTag(event)}
       />
       <label htmlFor={tag} className="tags__item ">
-        {tag}
+        #{tag.toLowerCase()}
       </label>
     </div>
   );

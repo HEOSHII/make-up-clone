@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,900;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -182,6 +182,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tags__wrapper {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -189,6 +200,12 @@
   gap: 10px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.tags__title {
+  font-size: 30px;
+  text-align: center;
+  color: #383838;
 }
 
 .tags__item {
@@ -268,6 +285,7 @@
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+  position: relative;
 }
 
 .products__item:hover {
@@ -276,6 +294,22 @@
   -webkit-transform: scale(1.01);
       -ms-transform: scale(1.01);
           transform: scale(1.01);
+}
+
+.products__item:hover .products__code {
+  opacity: 1;
+}
+
+.products__code {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  opacity: 0;
+  color: #969696;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .products__image-wrapper {
@@ -293,6 +327,43 @@
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.products__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.products__name {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.products__tags {
+  font-weight: 100;
+}
+
+.products__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  letter-spacing: 0.2rem;
+  color: #6b8068;
+  font-size: 20px;
+  font-style: italic;
 }
 
 .products__buy-button {
