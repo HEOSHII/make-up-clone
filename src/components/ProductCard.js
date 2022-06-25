@@ -8,10 +8,7 @@ function ProductCard({ product }) {
         <img
           className="products__image"
           src={product.image_link}
-          alt={product.name}
-          onError={(event) =>
-            (event.target.src = "../../public/assets/alt-pic.webp")
-          }
+          onError={(event) => (event.target.src = "./assets/alt-pic.webp")}
         />
       </div>
       <div className="products__info">
