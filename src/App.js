@@ -6,19 +6,15 @@ import { asyncGetProdutcs } from "./store/actions";
 
 function App() {
   const dispatch = useDispatch();
-  const selectedTags = useSelector((state) => state.selectedTagsReducer.tags);
-  const products = useSelector((state) => state.productsReducer.products);
   const params = useSelector((state) => state.paramsReducer.params);
   console.log(params);
   useEffect(() => {
-    if (selectedTags.length) {
-      dispatch(asyncGetProdutcs(selectedTags));
-    }
-  }, [selectedTags]);
+    dispatch(asyncGetProdutcs(params));
+  }, [params]);
   return (
     <div className="App">
       <Header />
-      <Main products={products} selectedTags={selectedTags} />
+      <Main />
     </div>
   );
 }

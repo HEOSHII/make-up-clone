@@ -1,23 +1,42 @@
-import React, { useState } from "react";
-import constants from "./constants";
+import React from "react";
 import TagsList from "./TagsList";
 import Content from "./Content";
+import constants from "./constants";
+import { changeType } from "../store/actions";
+import { useDispatch } from "react-redux";
 
-function Main({ products, selectedTags }) {
-  const [isOpen, setOpen] = useState(false);
-  const styles = {
-    wrapper: ["brands", isOpen ? "opened" : ""].join(" "),
-  };
-  const buttonStyles = ["brands__button", isOpen ? "active" : null].join(" ");
-
-  function openCloseBrands() {
-    setOpen(!isOpen);
-    console.log(isOpen);
+function Main() {
+  const dispatch = useDispatch();
+  function checkType(event) {
+    dispatch(changeType(event.target.id));
+    console.log(event.target.id);
   }
   return (
     <main className="main">
-      <TagsList selectedTags={selectedTags} />
-      <Content products={products} selectedTags={selectedTags} />
+      <TagsList />
+      <div className="types">
+        <hr />
+        <div className="types__wrapper">
+          {constants.types.map((type) => {
+            return (
+              <div className="types__item">
+                <input
+                  onChange={(event) => checkType(event)}
+                  className="types__input"
+                  type={"radio"}
+                  id={type}
+                  name="types"
+                />
+                <label className="types__label" htmlFor={type}>
+                  {type}
+                </label>
+              </div>
+            );
+          })}
+        </div>
+        <hr />
+      </div>
+      <Content />
     </main>
   );
 }

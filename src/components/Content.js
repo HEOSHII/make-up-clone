@@ -2,20 +2,20 @@ import React from "react";
 import ProducstList from "./ProducstList";
 import constants from "./constants";
 import Loading from "./Loading";
+import { useSelector } from "react-redux";
 
-function Content({ products, selectedTags }) {
+function Content() {
+  const products = useSelector((state) => state.productsReducer.products);
   function produtsRender() {
-    if (!selectedTags.length) {
-      return <h1>CATEGORIES</h1>;
-    }
     if (constants.isLoading) {
       return <Loading className="loading" />;
+    } else {
+      return products.length ? (
+        <ProducstList products={products} />
+      ) : (
+        <h3> Products not found </h3>
+      );
     }
-    return products.length ? (
-      <ProducstList products={products} />
-    ) : (
-      <h1> NO PRODUCTS FOUND </h1>
-    );
   }
 
   return <div className="content">{produtsRender()}</div>;

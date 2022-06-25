@@ -1,8 +1,13 @@
-import { SET_TAG_TO_PARAMS, REMOVE_TAG_FROM_PARAMS } from "./types";
+import {
+  SET_TAG_TO_PARAMS,
+  REMOVE_TAG_FROM_PARAMS,
+  CHANGE_TYPE,
+} from "./types";
 
 const defaultState = {
   params: {
-    product_tags: [],
+    product_type: ``,
+    product_tags: ``,
   },
 };
 
@@ -11,15 +16,30 @@ export const paramsReducer = (state = defaultState, { type, payload }) => {
     case SET_TAG_TO_PARAMS:
       return {
         ...state,
-        params: { product_tags: [...state.params.product_tags, payload] },
+        params: {
+          ...state.params,
+          product_tags: [state.params.product_tags, payload]
+            .filter((item) => item !== "")
+            .join(", "),
+        },
       };
     case REMOVE_TAG_FROM_PARAMS:
       return {
         ...state,
         params: {
-          product_tags: state.params.product_tags.filter(
-            (tag) => tag !== payload
-          ),
+          ...state.params,
+          product_tags: state.params.product_tags
+            .split(", ")
+            .filter((tag) => tag !== payload)
+            .join(", "),
+        },
+      };
+    case CHANGE_TYPE:
+      return {
+        ...state,
+        params: {
+          ...state.params,
+          product_type: payload,
         },
       };
     default:

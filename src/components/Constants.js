@@ -1,5 +1,7 @@
+
+
 export default {
-  isLoading: false,
+  isLoading: true,
   isBrandsOpen: false,
   products: [],
 

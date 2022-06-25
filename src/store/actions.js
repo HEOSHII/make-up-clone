@@ -1,27 +1,12 @@
 import constants from "../components/constants";
 import {
-  ADD_TAG,
-  REMOVE_TAG,
   SET_PRODUCTS,
   SET_TAG_TO_PARAMS,
   REMOVE_TAG_FROM_PARAMS,
+  CHANGE_TYPE,
 } from "./types";
 import axios from "axios";
 axios.defaults.baseURL = "http://makeup-api.herokuapp.com/api/v1";
-
-export const addTag = (payload) => {
-  return {
-    type: ADD_TAG,
-    payload,
-  };
-};
-
-export const removeTag = (payload) => {
-  return {
-    type: REMOVE_TAG,
-    payload,
-  };
-};
 
 export const setTagToParams = (payload) => {
   return {
@@ -44,13 +29,18 @@ export const setProducts = (payload) => {
   };
 };
 
-export const asyncGetProdutcs = (selectedTags) => {
+export const changeType = (payload) => {
+  return {
+    type: CHANGE_TYPE,
+    payload,
+  };
+};
+
+export const asyncGetProdutcs = (params) => {
   return (dispatch) => {
     axios
       .get("/products.json", {
-        params: {
-          product_tags: selectedTags.join(", "),
-        },
+        params: params,
       })
       .then((response) => {
         dispatch(setProducts(response.data));
