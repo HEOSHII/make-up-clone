@@ -1,5 +1,11 @@
 import constants from "../components/constants";
-import { ADD_TAG, REMOVE_TAG, PRODUCTS_BY_TAG } from "./types";
+import {
+  ADD_TAG,
+  REMOVE_TAG,
+  SET_PRODUCTS,
+  SET_TAG_TO_PARAMS,
+  REMOVE_TAG_FROM_PARAMS,
+} from "./types";
 import axios from "axios";
 axios.defaults.baseURL = "http://makeup-api.herokuapp.com/api/v1";
 
@@ -17,14 +23,28 @@ export const removeTag = (payload) => {
   };
 };
 
-export const setProducts = (payload) => {
+export const setTagToParams = (payload) => {
   return {
-    type: PRODUCTS_BY_TAG,
+    type: SET_TAG_TO_PARAMS,
     payload,
   };
 };
 
-export const asyncGetProdutcsByTag = (selectedTags) => {
+export const removeTagFromParams = (payload) => {
+  return {
+    type: REMOVE_TAG_FROM_PARAMS,
+    payload,
+  };
+};
+
+export const setProducts = (payload) => {
+  return {
+    type: SET_PRODUCTS,
+    payload,
+  };
+};
+
+export const asyncGetProdutcs = (selectedTags) => {
   return (dispatch) => {
     axios
       .get("/products.json", {
@@ -34,8 +54,7 @@ export const asyncGetProdutcsByTag = (selectedTags) => {
       })
       .then((response) => {
         dispatch(setProducts(response.data));
-
-        constants.isLoad = false;
+        constants.isLoading = false;
       })
       .catch((error) => console.warn(error));
   };

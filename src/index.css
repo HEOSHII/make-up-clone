@@ -220,6 +220,7 @@
 }
 
 .products__item {
+  max-height: 500px;
   background: white;
   text-align: center;
   width: 100%;
@@ -273,15 +274,15 @@
 .products__image-wrapper {
   margin-top: 20px;
   width: 100%;
-  height: 50%;
+  height: 40%;
   overflow: hidden;
 }
 
 .products__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
@@ -302,11 +303,12 @@
 }
 
 .products__name {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 .products__tags {
+  font-size: 12px;
   font-weight: 100;
 }
 
@@ -322,7 +324,7 @@
   gap: 10px;
   letter-spacing: 0.2rem;
   color: #6b8068;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .products__price-dollar {
@@ -346,6 +348,88 @@
 .products__buy-button:hover {
   background: #383838;
   color: white;
+}
+
+.brands {
+  position: fixed;
+  background: white;
+  -webkit-box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 0;
+  left: -70%;
+  z-index: 9999;
+  padding: 100px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.brands__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.brands__item {
+  font-size: 12px;
+  border: 1px solid #383838;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.brands__button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 0 50% 50% 0;
+  border: none;
+  -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.3);
+  background: white;
+  right: -60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.brands__button p {
+  font-size: 28px;
+  color: #383838;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.brands.opened {
+  left: 0;
+}
+
+.brands.opened .brands__button p {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 * {
@@ -381,6 +465,8 @@
 .loading__image {
   width: 100px;
   height: 100px;
+  -webkit-filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
 }
 
 .content {
@@ -389,6 +475,7 @@
   display: flex;
   margin-top: 15px;
   width: 100%;
+  min-height: 70vh;
   background: #f7f7f7;
   padding: 20px 0;
 }

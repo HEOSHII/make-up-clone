@@ -1,6 +1,8 @@
 export default {
-  isLoad: false,
+  isLoading: false,
+  isBrandsOpen: false,
   products: [],
+
   tags: [
     "Canadian",
     "CertClean",

@@ -26,6 +26,7 @@
   &__image {
     width: 100px;
     height: 100px;
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
   }
 }
 
@@ -33,6 +34,7 @@
   display: flex;
   margin-top: 15px;
   width: 100%;
+  min-height: 70vh;
   background: $secondary-grey;
   padding: 20px 0;
 }

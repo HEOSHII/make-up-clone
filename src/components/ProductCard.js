@@ -15,7 +15,7 @@ function ProductCard({ product }) {
         <h4 className="products__name">{product.name}</h4>
         <p className="products__tags">({product.tag_list.join(", ")})</p>
         <strong className="products__price">
-          {product.price}
+          {Number(product.price).toFixed(2)}
           <span className="products__price-dollar">$</span>
         </strong>
         <button className="products__buy-button">Add to cart</button>

@@ -1,4 +1,4 @@
-import { PRODUCTS_BY_TAG } from "./types";
+import { SET_PRODUCTS } from "./types";
 
 const defaultState = {
   products: [],
@@ -6,7 +6,7 @@ const defaultState = {
 
 export const productsReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
-    case PRODUCTS_BY_TAG:
+    case SET_PRODUCTS:
       return {
         ...state,
         products: payload,

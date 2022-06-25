@@ -1,8 +1,14 @@
+import { ADD_TAG } from "./types";
+import { REMOVE_TAG } from "./types";
+
 const defaultState = {
   tags: [],
 };
 
-export const selectedTagsReducer = (state = defaultState, { type, payload }) => {
+export const selectedTagsReducer = (
+  state = defaultState,
+  { type, payload }
+) => {
   switch (type) {
     case ADD_TAG:
       return {
@@ -18,6 +24,3 @@ export const selectedTagsReducer = (state = defaultState, { type, payload }) => 
       return state;
   }
 };
-
-const ADD_TAG = "ADD_TAG";
-const REMOVE_TAG = "REMOVE_TAG";

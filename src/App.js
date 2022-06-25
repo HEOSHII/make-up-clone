@@ -1,28 +1,24 @@
 import Header from "./components/Header";
-import Loading from "./components/Loading";
+import Main from "./components/Main";
 import { useDispatch, useSelector } from "react-redux";
-import TagsList from "./components/TagsList";
 import React, { useEffect } from "react";
-import { asyncGetProdutcsByTag } from "./store/actions";
-import Content from "./components/Content";
+import { asyncGetProdutcs } from "./store/actions";
 
 function App() {
   const dispatch = useDispatch();
   const selectedTags = useSelector((state) => state.selectedTagsReducer.tags);
   const products = useSelector((state) => state.productsReducer.products);
+  const params = useSelector((state) => state.paramsReducer.params);
+  console.log(params);
   useEffect(() => {
     if (selectedTags.length) {
-      dispatch(asyncGetProdutcsByTag(selectedTags));
-    } else {
+      dispatch(asyncGetProdutcs(selectedTags));
     }
   }, [selectedTags]);
   return (
     <div className="App">
       <Header />
-      <main className="main">
-        <TagsList selectedTags={selectedTags} />
-        <Content products={products} tags={selectedTags} />
-      </main>
+      <Main products={products} selectedTags={selectedTags} />
     </div>
   );
 }

@@ -1,20 +1,24 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addTag, removeTag } from "../store/actions";
+import { useDispatch } from "react-redux";
+import {
+  addTag,
+  removeTag,
+  setTagToParams,
+  removeTagFromParams,
+} from "../store/actions";
 import constants from "./constants";
 
 function Tag({ tag }) {
   const dispatch = useDispatch();
-
   const checkTag = (event) => {
-    constants.isLoad = true;
+    constants.isLoading = true;
     if (event.target.checked) {
       dispatch(addTag(event.target.id));
+      dispatch(setTagToParams(event.target.id));
     } else {
       dispatch(removeTag(event.target.id));
+      dispatch(removeTagFromParams(event.target.id));
     }
-
-    // dispatch(asyncGetProdutcsByTag(selectedTags));
   };
   return (
     <div className="tag">
