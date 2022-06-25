@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 function Main() {
   const dispatch = useDispatch();
   function checkType(event) {
+    constants.isLoading = true;
     dispatch(changeType(event.target.id));
     console.log(event.target.id);
   }

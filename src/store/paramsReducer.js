@@ -8,6 +8,7 @@ const defaultState = {
   params: {
     product_type: ``,
     product_tags: ``,
+    rating_greater_than: 4.9,
   },
 };
 
@@ -21,6 +22,8 @@ export const paramsReducer = (state = defaultState, { type, payload }) => {
           product_tags: [state.params.product_tags, payload]
             .filter((item) => item !== "")
             .join(", "),
+
+          rating_greater_than: "",
         },
       };
     case REMOVE_TAG_FROM_PARAMS:
@@ -32,6 +35,8 @@ export const paramsReducer = (state = defaultState, { type, payload }) => {
             .split(", ")
             .filter((tag) => tag !== payload)
             .join(", "),
+
+          rating_greater_than: "",
         },
       };
     case CHANGE_TYPE:
@@ -40,6 +45,7 @@ export const paramsReducer = (state = defaultState, { type, payload }) => {
         params: {
           ...state.params,
           product_type: payload,
+          rating_greater_than: "",
         },
       };
     default:

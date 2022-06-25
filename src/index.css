@@ -383,14 +383,15 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  color: #f7f7f7;
+  color: #383838;
   -webkit-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
 }
 
 .types__label:hover {
-  color: #383838;
+  color: black;
+  background: #f7f7f7;
 }
 
 .types__input {
@@ -398,7 +399,8 @@
 }
 
 .types__input:checked ~ .types__label {
-  color: #383838;
+  color: black;
+  background: #f7f7f7;
   -webkit-box-shadow: 0 2px 0 0 #383838, 0 -2px 0 0 #383838;
           box-shadow: 0 2px 0 0 #383838, 0 -2px 0 0 #383838;
 }

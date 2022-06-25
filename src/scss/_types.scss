@@ -18,17 +18,19 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    color: $secondary-grey;
+    color: $primary-grey;
     transition: all 0.1s;
     &:hover {
-      color: $primary-grey;
+      color: black;
+      background: $secondary-grey;
     }
   }
   &__input {
     display: none;
     &:checked {
       & ~ .types__label {
-        color: $primary-grey;
+        color: black;
+        background: $secondary-grey;
         box-shadow: 0 2px 0 0 $primary-grey, 0 -2px 0 0 $primary-grey;
         // background: $primary-grey;
         // color: white;
