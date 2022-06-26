@@ -1,8 +1,40 @@
 import React from "react";
+import RatingStar from "./RatingStar";
 
 function ProductCard({ product }) {
+  const productRating = Number(product.rating).toFixed(0);
+  const productPrice = Number(product.price).toFixed(2);
+
+  function openCard(product) {
+    console.log(product.name);
+  }
+
+  function renderProductTags(tags) {
+    return tags.length ? (
+      <p className="products__tags">({product.tag_list.join(", ")})</p>
+    ) : (
+      <p className="products__tags">No tags</p>
+    );
+  }
+
+  function renderRating(rating) {
+    const ratingStars = [];
+    for (let i = 0; i < rating; i++) {
+      ratingStars.push(<RatingStar class={"rating__star"} />);
+    }
+    if (rating < 5) {
+      for (let i = 0; i < 5 - rating; i++) {
+        ratingStars.push(<RatingStar class={"rating__star-empty"} />);
+      }
+    }
+    return ratingStars;
+  }
   return (
-    <div className="products__item" key={product.id}>
+    <div
+      className="products__item"
+      key={product.id}
+      onClick={() => openCard(product)}
+    >
       <div className="products__code">code: {product.id}</div>
       <div className="products__image-wrapper">
         <img
@@ -13,9 +45,10 @@ function ProductCard({ product }) {
       </div>
       <div className="products__info">
         <h4 className="products__name">{product.name}</h4>
-        <p className="products__tags">({product.tag_list.join(", ")})</p>
+        <div>{renderProductTags(product.tag_list)}</div>
+        <div className="rating">{renderRating(productRating)}</div>
         <strong className="products__price">
-          {Number(product.price).toFixed(2)}
+          {productPrice}
           <span className="products__price-dollar">$</span>
         </strong>
         <button className="products__buy-button">Add to cart</button>

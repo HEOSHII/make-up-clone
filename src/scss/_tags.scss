@@ -26,11 +26,13 @@
       background: $secondary-grey;
       border-radius: 5px;
       cursor: pointer;
+      opacity: 0.7;
       transition: all 0.1s;
     }
     &__input {
       display: none;
       &:checked ~ .tag__label {
+        opacity: 1;
         color: white;
         background: $primary-grey;
       }

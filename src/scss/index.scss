@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: Poppins, sans-serif;
+  font-family: $main-font;
 }
 
 .container {
@@ -32,9 +32,29 @@
 
 .content {
   display: flex;
-  // margin-top: 15px;
   width: 100%;
   min-height: 70vh;
   background: $secondary-grey;
   padding: 20px 0;
+}
+
+.not-found {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  &__star {
+    svg {
+      fill: orange;
+    }
+    &-empty {
+      svg {
+        fill: $secondary-grey;
+      }
+    }
+  }
 }

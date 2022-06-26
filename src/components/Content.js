@@ -13,7 +13,7 @@ function Content() {
       return products.length ? (
         <ProducstList products={products} />
       ) : (
-        <h3> Products not found </h3>
+        <h3 className="not-found"> Products not found </h3>
       );
     }
   }

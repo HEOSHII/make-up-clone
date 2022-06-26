@@ -1,9 +1,5 @@
-
-
 export default {
   isLoading: true,
-  isBrandsOpen: false,
-  products: [],
 
   tags: [
     "Canadian",

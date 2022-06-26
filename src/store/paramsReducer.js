@@ -9,6 +9,8 @@ const defaultState = {
     product_type: ``,
     product_tags: ``,
     rating_greater_than: 4.9,
+    price_greater_than: 0,
+    limit: 9,
   },
 };
 
