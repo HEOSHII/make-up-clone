@@ -4,3 +4,6 @@ export const ADD_TAG = "ADD_TAG";
 export const SET_TAG_TO_PARAMS = "SET_TAG_TO_PARAMS";
 export const REMOVE_TAG_FROM_PARAMS = "REMOVE_TAG_FROM_PARAMS";
 export const CHANGE_TYPE = "CHANGE_TYPE";
+export const SET_PRODUCT_CARD = "SET_PRODUCT_CARD";
+export const CLOSE_CARD = "CLOSE_CARD";
+export const OPEN_CARD = "OPEN_CARD";

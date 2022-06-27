@@ -1,6 +1,7 @@
 import { SET_PRODUCTS } from "./types";
 
 const defaultState = {
+  isCardOpen: true,
   products: [],
 };
 

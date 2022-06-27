@@ -1,12 +1,12 @@
 import React from "react";
-import ProductCard from "./ProductCard";
+import ProductItem from "./ProductItem";
 
 function ProducstList({ products }) {
   console.log(products);
   return (
     <div className="products container">
       {products.map((product) => {
-        return <ProductCard product={product} key={product.id} />;
+        return <ProductItem product={product} key={product.id} />;
       })}
     </div>
   );

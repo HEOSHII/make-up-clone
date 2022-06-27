@@ -1,5 +1,6 @@
 export default {
   isLoading: true,
+  isCardOpen: true,
 
   tags: [
     "Canadian",

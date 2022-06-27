@@ -1,57 +1,57 @@
 import React from "react";
-import RatingStar from "./RatingStar";
+import { useDispatch, useSelector } from "react-redux";
+import { closeCard } from "../store/actions";
 
-function ProductCard({ product }) {
-  const productRating = Number(product.rating).toFixed(0);
-  const productPrice = Number(product.price).toFixed(2);
+function ProductCard() {
+  const dispatch = useDispatch();
 
-  function openCard(product) {
-    console.log(product.name);
-  }
+  const currentProduct = useSelector(
+    (state) => state.currentProductReducer.currentProduct
+  );
 
-  function renderProductTags(tags) {
-    return tags.length ? (
-      <p className="products__tags">({product.tag_list.join(", ")})</p>
-    ) : (
-      <p className="products__tags">No tags</p>
-    );
-  }
+  const isOpened = useSelector(
+    (state) => state.currentProductReducer.isCardOpen
+  );
 
-  function renderRating(rating) {
-    const ratingStars = [];
-    for (let i = 0; i < rating; i++) {
-      ratingStars.push(<RatingStar class={"rating__star"} />);
+  function closeCardHandler(event) {
+    if (event.target.classList.contains("opened")) {
+      dispatch(closeCard());
     }
-    if (rating < 5) {
-      for (let i = 0; i < 5 - rating; i++) {
-        ratingStars.push(<RatingStar class={"rating__star-empty"} />);
-      }
-    }
-    return ratingStars;
   }
+
   return (
     <div
-      className="products__item"
-      key={product.id}
-      onClick={() => openCard(product)}
+      className={isOpened ? "product-card opened" : "product-card"}
+      onClick={(event) => closeCardHandler(event)}
     >
-      <div className="products__code">code: {product.id}</div>
-      <div className="products__image-wrapper">
-        <img
-          className="products__image"
-          src={product.image_link}
-          onError={(event) => (event.target.src = "./assets/alt-pic.webp")}
-        />
-      </div>
-      <div className="products__info">
-        <h4 className="products__name">{product.name}</h4>
-        <div>{renderProductTags(product.tag_list)}</div>
-        <div className="rating">{renderRating(productRating)}</div>
-        <strong className="products__price">
-          {productPrice}
-          <span className="products__price-dollar">$</span>
-        </strong>
-        <button className="products__buy-button">Add to cart</button>
+      <div className="product-card__wrapper container">
+        <div className="product-card__content">
+          <div className="product-card__info">
+            <div className="product-card__image">
+              <img
+                src={currentProduct.image_link}
+                alt="IMAGE"
+                onError={(event) =>
+                  (event.target.src = "./assets/alt-pic.webp")
+                }
+              />
+            </div>
+            <div className="product-card__about">
+              <h3 className="product-card__title">{currentProduct.name}</h3>
+            </div>
+          </div>
+          <div className="product-card__description">
+            <h3>ABOUT PRODUCT</h3>
+            <p>{currentProduct.description}</p>
+          </div>
+        </div>
+
+        <button
+          className="product-card__close-button"
+          onClick={() => dispatch(closeCard())}
+        >
+          ×
+        </button>
       </div>
     </div>
   );
