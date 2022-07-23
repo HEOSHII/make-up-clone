@@ -14,10 +14,9 @@ function App() {
     document.body.style.overflow = 'auto';
   }
 
-  console.log(params);
   useEffect(() => {
     dispatch(asyncGetProdutcs(params));
-  }, [params]);
+  }, [dispatch, params]);
 
   return (
     <div className="App">

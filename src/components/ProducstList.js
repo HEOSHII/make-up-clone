@@ -2,7 +2,6 @@ import React from "react";
 import ProductItem from "./ProductItem";
 
 function ProducstList({ products }) {
-  console.log(products);
   return (
     <div className="products container">
       {products.map((product) => {

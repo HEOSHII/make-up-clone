@@ -1,4 +1,4 @@
-@import "imports";
+@import 'imports';
 
 * {
   margin: 0;
@@ -6,6 +6,10 @@
   box-sizing: border-box;
   outline: none;
   font-family: $main-font;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .container {
@@ -16,7 +20,7 @@
 }
 
 .main {
-  margin-top: 10px;
+  padding-top: 120px;
 }
 
 .loading {

@@ -1,11 +1,11 @@
-import React from "react";
-import ProducstList from "./ProducstList";
-import constants from "./constants";
-import Loading from "./Loading";
-import { useSelector } from "react-redux";
+import React from 'react';
+import ProducstList from './ProducstList';
+import constants from './constants';
+import Loading from './Loading';
+import { useSelector } from 'react-redux';
 
 function Content() {
-  const products = useSelector((state) => state.productsReducer.products);
+  const products = useSelector(state => state.productsReducer.products);
   function produtsRender() {
     if (constants.isLoading) {
       return <Loading className="loading" />;
